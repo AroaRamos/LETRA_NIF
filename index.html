@@ -11,11 +11,24 @@
     <div id="calculo-letra">    
         <label for="">Número de NIF</label>
         <input type="text" id="nif">
-        <button>Calcular letra</button>
+        <button onclick="muestraLetraNif()">Calcular letra</button>
     </div>
 
     <script>
+        function calculaLetraNif(nif){
+            //Es lo mismo
+            //let letra = ['T', 'R', 'W'.....]
+            let letra = "TRWAGMYFPDXBNJZSQVHLCKE";
+            let posicion = nif%23;
+            return letra [posicion];
+        }
 
+        function muestraLetraNif(){
+            let nif = document.getElementById("nif").value;
+            let nifConLetra = nif + "-" + calculaLetraNif(nif);
+            alert(nifConLetra);
+
+        }
 
     </script>
 </body>
